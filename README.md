@@ -1,4 +1,4 @@
-# Practica Integradora
+# Practica Integradora BIG DATA
 En esta práctica integradora el objetivo es simular la situación que se detalla a continuación.
 
 Desde un área de innovación solicitan construir un MVP(Producto viable mínimo) de un ambiente de Big Data donde se deban cargar unos archivos CSV que anteriormente se utilizaban en un datawarehouse en MySQl, pero ahora en un entorno de Hadoop.
