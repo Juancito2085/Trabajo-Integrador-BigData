@@ -104,3 +104,22 @@ Copiar los archivos csv provistos a HDFS:
 Este proceso de creación de la carpeta data y copiado de los arhivos, debe poder ejecutarse desde un shell script.
 
 Nota: Busque dfs.blocksize y dfs.replication en http://<IP_Anfitrion>:9870/conf para encontrar los valores de tamaño de bloque y factor de réplica respectivamente entre otras configuraciones del sistema Hadoop.
+
+<h1>2) Hive</h1>
+Se puede utilizar el entorno docker-compose-v2.yml
+
+Crear tablas en Hive, a partir de los csv ingestados en HDFS.
+
+Para esto, se puede ubicar dentro del contenedor correspondiente al servidor de Hive, y ejecutar desdea allí los scripts necesarios
+```
+  sudo docker exec -it hive-server bash
+  hive
+```
+Este proceso de creación las tablas debe poder ejecutarse desde un shell script.
+
+Nota: Para ejecutar un script de Hive, requiere el comando:
+
+```
+  hive -f <script.hql>
+```
+
