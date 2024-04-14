@@ -64,6 +64,31 @@ Copiar los archivos ubicados en la carpeta Datasets, dentro del contenedor "name
   exit
   sudo docker cp <path><archivo> namenode:/home/Datasets/<archivo>
 ```
+Si bien en el codigo anterior se mostro una manera general de realizar el proceso de copiar archivos de la carpeta Datasets de los archivos descargados al contenedor "namemode" a continuación se muestra un script, Paso00.sh, donde esto se realiza:
+
+```
+ sudo docker cp Datasets/canaldeventa/CanalDeVenta.csv namenode:/home/Datasets/canaldeventa/CanalDeVenta.csv
+ sudo docker cp Datasets/calendario/Calendario.csv namenode:/home/Datasets/calendario/Calendario.csv
+ sudo docker cp Datasets/cliente/Cliente.csv namenode:/home/Datasets/cliente/Cliente.csv
+ sudo docker cp Datasets/compra/Compra.csv namenode:/home/Datasets/compra/Compra.csv
+ sudo docker cp Datasets/empleado/Empleado.csv namenode:/home/Datasets/empleado/Empleado.csv
+ sudo docker cp Datasets/gasto/Gasto.csv namenode:/home/Datasets/gasto/Gasto.csv
+ sudo docker cp Datasets/producto/Producto.csv namenode:/home/Datasets/producto/Producto.csv
+ sudo docker cp Datasets/proveedor/Proveedor.csv namenode:/home/Datasets/proveedor/Proveedor.csv
+ sudo docker cp Datasets/sucursal/Sucursal.csv namenode:/home/Datasets/sucursal/Sucursal.csv
+ sudo docker cp Datasets/tipodegasto/TiposDeGasto.csv namenode:/home/Datasets/tipodegasto/TiposDeGasto.csv
+ sudo docker cp Datasets/venta/Venta.csv namenode:/home/Datasets/venta/Venta.csv
+ sudo docker cp Datasets/data_nvo/Cliente.csv namenode:/home/Datasets/data_nvo/Cliente.csv
+ sudo docker cp Datasets/data_nvo/Empleado.csv namenode:/home/Datasets/data_nvo/Empleado.csv
+ sudo docker cp Datasets/data_nvo/Producto.csv namenode:/home/Datasets/data_nvo/Producto.csv
+ ```
+Es importante destacar que no hace falta crear la carpeta "Datasets" en el nodo pues al ejecutar al copiar un archivo a una carpeta donde no existe Linux la crea automáticamente. Para ejecutar el script es tan simple como:
+
+```
+ ./Paso00.sh
+```
+Siempre y cuando estemos en la carpeta donde está el archivo .sh.
+
 Ubicarse en el contenedor "namenode"
 ```
   sudo docker exec -it namenode bash
