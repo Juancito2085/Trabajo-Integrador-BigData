@@ -101,7 +101,14 @@ Copiar los archivos csv provistos a HDFS:
 ```
   hdfs dfs -put /home/Datasets/* /data
 ```
-Este proceso de creación de la carpeta data y copiado de los arhivos, debe poder ejecutarse desde un shell script.
+Este proceso de creación de la carpeta data y copiado de los arhivos, se puede ejercutar desde el scrip Paso01.sh que se muestra a continuación:
+
+```
+ sudo doccker exec -it namenode bash
+ hdfs dfs -rm -R /data
+ hdfs dfs -mkdir /data
+ hdfs dfs -put /home/Datasets/* /data
+```
 
 Nota: Busque dfs.blocksize y dfs.replication en http://<IP_Anfitrion>:9870/conf para encontrar los valores de tamaño de bloque y factor de réplica respectivamente entre otras configuraciones del sistema Hadoop.
 
@@ -122,4 +129,5 @@ Nota: Para ejecutar un script de Hive, requiere el comando:
 ```
   hive -f <script.hql>
 ```
-
+<h1>3) Formatos de Almacenamiento</h1>
+Las tablas creadas en el punto 2 a partir de archivos en formato csv, deben ser almacenadas en formato Parquet + Snappy. Tener en cuenta además de aplicar particiones para alguna de las tablas.
