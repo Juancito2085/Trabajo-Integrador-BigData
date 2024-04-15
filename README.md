@@ -113,7 +113,12 @@ Este proceso de creación de la carpeta data y copiado de los arhivos, se puede 
 Nota: Busque dfs.blocksize y dfs.replication en http://<IP_Anfitrion>:9870/conf para encontrar los valores de tamaño de bloque y factor de réplica respectivamente entre otras configuraciones del sistema Hadoop.
 
 <h1>2) Hive</h1>
-Se puede utilizar el entorno docker-compose-v2.yml
+
+Se puede utilizar el entorno docker-compose-v2.yml mediante de la siguiente manera:
+
+```
+ sudo docker-compose -f docker-compose-v2.yml up -d
+```
 
 Crear tablas en Hive, a partir de los csv ingestados en HDFS.
 
