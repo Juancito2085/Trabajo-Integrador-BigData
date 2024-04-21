@@ -169,4 +169,9 @@ En la siguiente imagen podemos ver que el proceso se ejecuto correctamente e inc
 Además se agregaron particiones a la tabla gasto en base al IdTipoGasto como se puede ver en la descripcion de la tabla como se puede apreciar en la siguiente imagen.
 
 <h1>SQL</h1>
+Ahora para hacer más eficientes las consultas se crean indices en algunas tablas a modo de ejemplo para comparar los resultados.
+
+En la siguiente imagen se crea un indice desde la consola para mostrar la sintaxis y los tiempos de ejecucion.
+
+Debemos notar como disminuye el tiempo siendo una consulta realmente simple por lo que a medida que se incremente el volumen almacenado y se complejisen las consultas esto traera un benefifio en la eficiencia de la ejecución de las mismas.
 
