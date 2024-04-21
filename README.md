@@ -22,7 +22,7 @@ Se pesenta un entorno Docker con Hadoop (HDFS) y la implementación de:
 </ul>
 
 <h1>Aclaración importante</h1>
-<p align="justify">Este proyecto integrador se comenzó sin ningun inconveniente, con el pasar de los puntos se modifcó la capacidad de la virtualización a lo máximo que permitia la PC. Pero al llegar al punto 5 con la ejecución del docker-compose correspondiente tuve serios problemas para seguir trabajando ya que see cerraba la máquina virtual o tardaba muchísmo al ejecutar una linea de comando o realizar cualquier otra acción. Por lo que tomé la decisión de realizar hasta donde era posible.</p>
+<p align="justify">Este proyecto integrador se comenzó sin ningun inconveniente, con el pasar de los puntos se modifcó la capacidad de la virtualización a lo máximo que permitia la PC. Pero al llegar al punto 5 con la ejecución del docker-compose correspondiente tuve serios problemas para seguir trabajando ya que see cerraba la máquina virtual o tardaba muchísmo al ejecutar una linea de comando o realizar cualquier otra acción. Por lo que tomé la decisión de realizar hasta donde era posible o le se podía hacer.</p>
 
 Para implementar ejecute
 ```
