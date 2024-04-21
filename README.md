@@ -21,26 +21,12 @@ Se pesenta un entorno Docker con Hadoop (HDFS) y la implementación de:
   <li>Kafka</li>
 </ul>
 
-
-Es importante mencionar que el entorno completo consume muchos recursos de su equipo, motivo por el cuál, se propondrán ejercicios pero con ambientes reducidos, en función de las herramientas utilizadas.
-
-Ejecute `docker network inspect` en la red (por ejemplo, `docker-hadoop-spark-hive_default`) para encontrar la IP en la que se publican las interfaces de hadoop. Acceda a estas interfaces con las siguientes URL:
-
-```
-Namenode: http://<IP_Anfitrion>:9870/dfshealth.html#tab-overview
-Datanode: http://<IP_Anfitrion>:9864/
-Spark master: http://<IP_Anfitrion>:8080/
-Spark worker: http://<IP_Anfitrion>:8081/	
-HBase Master-Status: http://<IP_Anfitrion>:16010
-HBase Zookeeper_Dump: http://<IP_Anfitrion>:16010/zk.jsp
-HBase Region_Server: http://<IP_Anfitrion>:16030
-Zeppelin: http://<IP_Anfitrion>:8888
-Neo4j: http://<IP_Anfitrion>:7474
-```
+<h1>Aclaración importante</h1>
+<p align="justify">Este proyecto integrador se comenzó sin ningun inconveniente, con el pasar de los puntos se modifcó la capacidad de la virtualización a lo máximo que permitia la PC. Pero al llegar al punto 5 con la ejecución del docker-compose correspondiente tuve serios problemas para seguir trabajando ya que see cerraba la máquina virtual o tardaba muchísmo al ejecutar una linea de comando o realizar cualquier otra acción. Por lo que tomé la decisión de realizar hasta donde era posible.</p>
 
 Para implementar ejecute
 ```
-  git clone https://github.com/lopezdar222/herramientas_big_data
+  git clone https://github.com/lopezdar222/Trabajo-Integrador-BigData.git
   cd herramientas_big_data
   sudo docker-compose -f docker-compose-vX.yml up -d
 ```
