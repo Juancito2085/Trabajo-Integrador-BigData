@@ -160,8 +160,8 @@ Ahora para hacer más eficientes las consultas se crean indices en algunas tabla
 En la siguiente imagen se crea un indice desde la consola para mostrar la sintaxis y los tiempos de ejecucion.
 
 
-<p aling="justify">Debemos notar como disminuye el tiempo siendo una consulta realmente simple por lo que a medida que se incremente el volumen almacenado y se complejisen las consultas esto traera un benefifio en la eficiencia de la ejecución de las mismas.
-
+<p aling="justify">Debemos notar como disminuye el tiempo siendo una consulta realmente simple por lo que a medida que se incremente el volumen almacenado y se complejisen las consultas esto traera un benefifio en la eficiencia de la ejecución de las mismas.</p>
+<img src="imagenes/img6.png" align="center">
 	
 <h1>5) NoSQL</h1>
 En esta seccion trataremos base de datos No solo SQL que son mas flexibles que las SQL y permiten todo tipos de datos para almacenar.
