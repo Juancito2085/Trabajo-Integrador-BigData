@@ -181,12 +181,14 @@ A continuación se copian los archivos iris.cs e iris.json al contenedor de mong
  sudo docker cp iris.csv mongodb:/data/iris.csv
  sudo docker cp iris.json mongodb:/data/iris.json
 ```
-Ahora ingresamo en en el contenedor de mogno
+Ahora ingresamos en en el contenedor de mongo
 
 ```
 sudo docker exec -it mongodb bash
 ```
+
 Luego se importan a mongo
+
 ```
  mongoimport /data/iris.csv --type csv --headerline -d dataprueba -c iris_csv
  mongoimport --db dataprueba --collection iris_json --file /data/iris.json --jsonArray
@@ -196,31 +198,34 @@ Ahora ingresamos a la linea de comando de MongoDB
  ```
  mongosh
 ```
+
 Y ejecutamos las siguientes lineas de codigo para ver las colecciones como se ven en las imagenes siguientes
 
 ```
-	use dataprueba
-	show collections
-	db.iris_csv.find()
-	db.iris_json.find()
-	```
+ use dataprueba
+ show collections
+ db.iris_csv.find()
+ db.iris_json.find()
+```
 Luego exportamos los archivos de la siguiente manera
+
 ```
  mongoexport --db dataprueba --collection iris_csv --fields sepal_length,sepal_width,petal_length,petal_width,species --type=csv --out /data/iris_export.csv
-	mongoexport --db dataprueba --collection iris_json --fields sepal_length,sepal_width,petal_length,petal_width,species --type=json --out /data/iris_export.json
-	```
+ mongoexport --db dataprueba --collection iris_json --fields sepal_length,sepal_width,petal_length,petal_width,species --type=json --out /data/iris_export.json
+```
  
 Ahora descargamos los archivos jar desde https://search.maven.org/search?q=g:org.mongodb.mongo-hadoop :
 https://search.maven.org/search?q=a:mongo-hadoop-hive
 https://search.maven.org/search?q=a:mongo-hadoop-spark
   
 Copiamos al contenedor de Hive
+
  ```
 	sudo docker cp mongo-hadoop-hive-2.0.2.jar hive-server:/opt/hive/lib/mongo-hadoop-hive-2.0.2.jar
 	sudo docker cp mongo-hadoop-core-2.0.2.jar hive-server:/opt/hive/lib/mongo-hadoop-core-2.0.2.jar
 	sudo docker cp mongo-hadoop-spark-2.0.2.jar hive-server:/opt/hive/lib/mongo-hadoop-spark-2.0.2.jar
 	sudo docker cp mongo-java-driver-3.12.11.jar hive-server:/opt/hive/lib/mongo-java-driver-3.12.11.jar
-````
+```
 
 Ahora se copia el script iris.hql
 
@@ -244,4 +249,6 @@ Luego se dan permisos para owner, group y others de lectura, escritura y ejecuci
 <h3>3) Neo4j</h3>
 
 <h3>4) Zeppelin</h3>
-
+<h1>6) Spark</h1>
+<h1>7) Carga incremeental con Spark</h1>
+<h1>8) Herramientas de orquestación de flujos</h1>
