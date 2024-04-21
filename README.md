@@ -185,3 +185,9 @@ sudo docker-compose -f docker-compose-v3.yml up -d
 ```
 <h3>1) HBase</h3>
 
+<h3>2) MongoDB</h3>
+
+<h3>3) Neo4j</h3>
+
+<h3>4) Zeppelin</h3>
+
