@@ -232,20 +232,27 @@ Copiamos al contenedor de Hive
 	sudo docker cp mongo-hadoop-core-2.0.2.jar hive-server:/opt/hive/lib/mongo-hadoop-core-2.0.2.jar
 	sudo docker cp mongo-hadoop-spark-2.0.2.jar hive-server:/opt/hive/lib/mongo-hadoop-spark-2.0.2.jar
 	sudo docker cp mongo-java-driver-3.12.11.jar hive-server:/opt/hive/lib/mongo-java-driver-3.12.11.jar
-		````
+````
+
 Ahora se copia el script iris.hql
+
 ```
  sudo docker cp iris.hql hive-server:/opt/iris.hql
 ```
-Y se ingresa en el conteiner
+
+Y se ingresa en el container
+
 ```
  sudo docker exec -it hive-server bash
 ```
+
 Luego se dan permisos para owner, group y others de lectura, escritura y ejecución. Para poder ejercutar el query
+
 ```
  chmod 777 iris.hql
-	hive -f iris.hql
- ```
+ hive -f iris.hql
+```
+
 <h3>3) Neo4j</h3>
 
 <h3>4) Zeppelin</h3>
