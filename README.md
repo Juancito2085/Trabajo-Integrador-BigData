@@ -163,5 +163,10 @@ En este caso se vuelven a crear las tablas del punto 2 pero en formato Parquet y
 hive -f Paso03.hql
 ```
 Ejecutado dentro del contenedor de Hive.
+En la siguiente imagen podemos ver que el proceso se ejecuto correctamente e incluso vemos las primeras 10 filas de la tabla compra.
 
-Las tablas creadas en el punto 2 a partir de archivos en formato csv, deben ser almacenadas en formato Parquet + Snappy. Tener en cuenta además de aplicar particiones para alguna de las tablas.
+
+Además se agregaron particiones a la tabla gasto en base al IdTipoGasto como se puede ver en la descripcion de la tabla como se puede apreciar en la siguiente imagen.
+
+<h1>SQL</h1>
+
