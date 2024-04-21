@@ -31,17 +31,18 @@ Para implementar ejecute
   sudo docker-compose -f docker-compose-vX.yml up -d
 ```
 
-<h1>1) HFDS</h1>
+<h1>1) HFDS</h1> 
+<img src="imagenes/hadoop-logo.jpg" width=200px >
 Se puede utilizar el entorno docker-compose-v1.yml de la siguiente manera:
 
 ```
   sudo docker-compose -f docker-compose-v1.yml up -d
 ```
-Explicar el flag -f
+El flag -f siver para indicar la ubicación del archivo compose. 
+El flag -d indica el modo "detached" dondo los containers corren en segundo plano.
 
-Explicar el flag -d
 
-Copiar los archivos ubicados en la carpeta Datasets, dentro del contenedor "namenode"
+Copiar los archivos ubicados en la carpeta Datasets, dentro del contenedor "namenode", creando antes una carpeta en el contenedor namenode llamada "Datasets"
 
 ```
   sudo docker exec -it namenode bash
@@ -99,6 +100,7 @@ Este proceso de creación de la carpeta data y copiado de los arhivos, se puede 
 Nota: Busque dfs.blocksize y dfs.replication en http://<IP_Anfitrion>:9870/conf para encontrar los valores de tamaño de bloque y factor de réplica respectivamente entre otras configuraciones del sistema Hadoop.
 
 <h1>2) Hive</h1>
+<img src="imagenes/hive_logo.png" width=200px >
 
 Se puede utilizar el entorno docker-compose-v2.yml mediante de la siguiente manera:
 
@@ -106,9 +108,7 @@ Se puede utilizar el entorno docker-compose-v2.yml mediante de la siguiente mane
  sudo docker-compose -f docker-compose-v2.yml up -d
 ```
 
-Crear tablas en Hive, a partir de los csv ingestados en HDFS.
-
-Para crear tablas a partir de los CSV ingestatadose, se debe ubicar dentro del contenedor correspondiente al servidor de Hive ee ingresar a la linea de comandos mediante las siguieentes instrucciones:
+Para crear tablas a partir de los CSV ingestatadose, se debe ubicar dentro del contenedor correspondiente al servidor de Hive ee ingresar a la linea de comandos mediante las siguientes instrucciones:
 ```
   sudo docker exec -it hive-server bash
   hive
@@ -116,9 +116,11 @@ Para crear tablas a partir de los CSV ingestatadose, se debe ubicar dentro del c
 Pero tambien se pueden ejecutar scripts dentro del contenedor sin necesidad de ingresar a Hive. Por ejemplo para crear las tablas utilizaremos la siguiente linea:
 
 ```
-hive -f script
+hive -f Paso02.hql
 ```
 Como se puede ver en la siguiente imagen nos muestra que no hubo errores y los tiempos ejecución.
+
+<img src="imagenes/img2.png" align="center">
 
 Se verifica que se hayan creado las tablas mediante el uso de la linea de comando de Hive con el los siguientes comandos:
 
@@ -130,18 +132,13 @@ SHOW tables;
 Ahora tambien se verifica que las tablas no esten vacías mediante el comando:
 
 ```
-SELECT COUNT(*) FROM compra
+SELECT COUNT(*) FROM compra;
 ```
-Se muestra una sola imagen para simplificar.
+Se muestra una sola imagen para simplificar. Donde se ven las tablas en la parte superior y el conteo de filas en la parte inferior.
+
+<img src="imagenes/img3.png" align="center">
 
 
-Este proceso de creación las tablas debe poder ejecutarse desde un shell script.
-
-Nota: Para ejecutar un script de Hive, requiere el comando:
-
-```
-  hive -f <script.hql>
-```
 <h1>3) Formatos de Almacenamiento</h1>
 En este caso se vuelven a crear las tablas del punto 2 pero en formato Parquet y comprimidas con Snappy para que sea más eficiente el proceso. Todo esto mediante la ejecución del siguiente script:
 
