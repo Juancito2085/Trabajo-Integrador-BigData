@@ -82,7 +82,7 @@ Si bien en el codigo anterior se mostro una manera general de realizar el proces
  sudo docker cp Datasets/data_nvo/Empleado.csv namenode:/home/Datasets/data_nvo/Empleado.csv
  sudo docker cp Datasets/data_nvo/Producto.csv namenode:/home/Datasets/data_nvo/Producto.csv
  ```
-Es importante destacar que no hace falta crear la carpeta "Datasets" en el nodo pues al ejecutar al copiar un archivo a una carpeta donde no existe Linux la crea automáticamente. Para ejecutar el script es tan simple como:
+Para ejecutar el script es tan simple como:
 
 ```
  ./Paso00.sh
@@ -122,11 +122,33 @@ Se puede utilizar el entorno docker-compose-v2.yml mediante de la siguiente mane
 
 Crear tablas en Hive, a partir de los csv ingestados en HDFS.
 
-Para esto, se puede ubicar dentro del contenedor correspondiente al servidor de Hive, y ejecutar desdea allí los scripts necesarios
+Para crear tablas a partir de los CSV ingestatadose, se debe ubicar dentro del contenedor correspondiente al servidor de Hive ee ingresar a la linea de comandos mediante las siguieentes instrucciones:
 ```
   sudo docker exec -it hive-server bash
   hive
 ```
+Pero tambien se pueden ejecutar scripts dentro del contenedor sin necesidad de ingresar a Hive. Por ejemplo para crear las tablas utilizaremos la siguiente linea:
+
+```
+hive -f script
+```
+Como se puede ver en la siguiente imagen nos muestra que no hubo errores y los tiempos ejecución.
+
+Se verifica que se hayan creado las tablas mediante el uso de la linea de comando de Hive con el los siguientes comandos:
+
+```
+USE integrador;
+SHOW tables;
+```
+
+Ahora tambien se verifica que las tablas no esten vacías mediante el comando:
+
+```
+SELECT COUNT(*) FROM compra
+```
+Se muestra una sola imagen para simplificar.
+
+
 Este proceso de creación las tablas debe poder ejecutarse desde un shell script.
 
 Nota: Para ejecutar un script de Hive, requiere el comando:
