@@ -140,24 +140,29 @@ Se muestra una sola imagen para simplificar. Donde se ven las tablas en la parte
 
 
 <h1>3) Formatos de Almacenamiento</h1>
-En este caso se vuelven a crear las tablas del punto 2 pero en formato Parquet y comprimidas con Snappy para que sea más eficiente el proceso. Todo esto mediante la ejecución del siguiente script:
+
+<p aling="justify">En este caso se vuelven a crear las tablas del punto 2 pero en formato Parquet y comprimidas con Snappy para que sea más eficiente el proceso. Todo esto mediante la ejecución del siguiente script:</p>
 
 ```
 hive -f Paso03.hql
 ```
 Ejecutado dentro del contenedor de Hive.
-En la siguiente imagen podemos ver que el proceso se ejecuto correctamente e incluso vemos las primeras 10 filas de la tabla compra.
 
+<p align="justify">En la siguiente imagen podemos ver que el proceso se ejecuto correctamente e incluso vemos las primeras 10 filas de la tabla compra.</p>
 
-Además se agregaron particiones a la tabla gasto en base al IdTipoGasto como se puede ver en la descripcion de la tabla como se puede apreciar en la siguiente imagen.
+<img src="imagenes/img4.png" align="center">
 
+<p align="justify">Además se agregaron particiones a la tabla gasto en base al IdTipoGasto como se puede ver en la descripcion de la tabla como se puede apreciar en la siguiente imagen.</p>
+<img src="imagenes/img5.png" align="center">
 <h1>4) SQL</h1>
 Ahora para hacer más eficientes las consultas se crean indices en algunas tablas a modo de ejemplo para comparar los resultados.
 
 En la siguiente imagen se crea un indice desde la consola para mostrar la sintaxis y los tiempos de ejecucion.
 
-Debemos notar como disminuye el tiempo siendo una consulta realmente simple por lo que a medida que se incremente el volumen almacenado y se complejisen las consultas esto traera un benefifio en la eficiencia de la ejecución de las mismas.
 
+<p aling="justify">Debemos notar como disminuye el tiempo siendo una consulta realmente simple por lo que a medida que se incremente el volumen almacenado y se complejisen las consultas esto traera un benefifio en la eficiencia de la ejecución de las mismas.
+
+	
 <h1>5) NoSQL</h1>
 En esta seccion trataremos base de datos No solo SQL que son mas flexibles que las SQL y permiten todo tipos de datos para almacenar.
 
@@ -169,7 +174,7 @@ sudo docker-compose -f docker-compose-v3.yml up -d
 <h3>1) HBase</h3>
 
 <h3>2) MongoDB</h3>
-
+<img src="imagenes/mongodb-logo.png" align="center">
 A continuación se copian los archivos iris.cs e iris.json al contenedor de mongo con el siguiente codigo:
 
 ```
