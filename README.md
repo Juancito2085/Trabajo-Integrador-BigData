@@ -157,4 +157,11 @@ Nota: Para ejecutar un script de Hive, requiere el comando:
   hive -f <script.hql>
 ```
 <h1>3) Formatos de Almacenamiento</h1>
+En este caso se vuelven a crear las tablas del punto 2 pero en formato Parquet y comprimidas con Snappy para que sea más eficiente el proceso. Todo esto mediante la ejecución del siguiente script:
+
+```
+hive -f Paso03.hql
+```
+Ejecutado dentro del contenedor de Hive.
+
 Las tablas creadas en el punto 2 a partir de archivos en formato csv, deben ser almacenadas en formato Parquet + Snappy. Tener en cuenta además de aplicar particiones para alguna de las tablas.
